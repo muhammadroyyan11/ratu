@@ -15,7 +15,6 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
   <!-- Vendor CSS Files -->
   <link href="<?php echo base_url('assets/vendor/aos/aos.css') ?>" rel="stylesheet">
@@ -37,32 +36,32 @@
 </head>
 
 <body>
+
+  <!-- ======= Hero Section ======= -->
+
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
+
       <div class="logo">
         <a href="<?= base_url('user') ?>"><img src="<?php echo base_url('assets/img/asap.png') ?>" alt="" class="img-fluid"></a>
       </div>
+
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?= base_url('home') ?>">home</a></li>
-          <!-- <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li> -->
-
-          <?php
-          if ($this->session->has_userdata('login_session')) : ?>
-            <!-- <li><a class="nav-link scrollto active" href="<?= site_url('user/setting') ?>">Hi <?= userdata('nama') ?>!</a></li> -->
-            <li><a class="nav-link scrollto" href="<?= site_url('user/setting') ?>">Hi <?= userdata('nama') ?>!</a></li>
-            <li><a class="nav-link scrollto" href="<?= base_url('auth/logout') ?>">Logout</a></li>
-          <?php else : ?>
-            <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
-          <?php endif; ?>
-        </ul>
-        <ul>
-
-
+          <li class="dropdown"><a href="#solution"><span>Solution</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#sopKebakaran">SOP Kebakaran</a></li>
+              <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#penKebakaran">Penanganan Kebakaran</a></li>
+              <li><a href="<?= base_url('muster') ?>">Muster List</a></li>
+              <li><a href="<?= base_url('about') ?>">About Us</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+
     </div>
-  </header>
-  <!-- End Header -->
+  </header><!-- End Header -->
