@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 27, 2021 at 06:06 AM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 8.0.3
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 29 Des 2021 pada 16.43
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `muster`
+-- Struktur dari tabel `muster`
 --
 
 CREATE TABLE `muster` (
@@ -41,7 +41,7 @@ CREATE TABLE `muster` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `muster`
+-- Dumping data untuk tabel `muster`
 --
 
 INSERT INTO `muster` (`id`, `rank`, `fire`, `personal`, `oil`, `man`, `emergency`, `flooding`, `electric`, `collusion`) VALUES
@@ -66,36 +66,37 @@ INSERT INTO `muster` (`id`, `rank`, `fire`, `personal`, `oil`, `man`, `emergency
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `is_active` int(1) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `image` varchar(128) NOT NULL,
-  `noHp` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `pass` varchar(255) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `no_telp` varchar(15) NOT NULL,
+  `role` enum('admin','user') NOT NULL,
+  `password` varchar(255) NOT NULL,
   `namaKapal` varchar(255) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
   `shipping` varchar(255) NOT NULL,
-  `date_created` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `created_at` int(11) NOT NULL,
+  `foto` text NOT NULL,
+  `is_active` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
-INSERT INTO `user` (`id`, `role_id`, `is_active`, `nama`, `image`, `noHp`, `email`, `pass`, `namaKapal`, `jabatan`, `shipping`, `date_created`) VALUES
-(4, 2, 1, 'andy', 'default.jpg', '12345678', 'andy@gmail.com', '$2a$12$nuaIVeVEpatADqMcpZRiMuSllpmqD1utyGXZAtALIkJxmk43RO7I2', 'pelni', 'kapten', 'pelni', 1640146331),
-(5, 2, 1, 'ratu', 'default.jpg', '081234687', 'ratu@gmail.com', '$2y$10$mC16eqwEC34qEoO2zrE8P.6aU7HO/T85GNSxusyh8U7H2ZuOOGyue', 'pelni', 'kapten', 'pelni', 1640163648);
+INSERT INTO `user` (`id_user`, `nama`, `username`, `email`, `no_telp`, `role`, `password`, `namaKapal`, `jabatan`, `shipping`, `created_at`, `foto`, `is_active`) VALUES
+(1, 'Adminisitrator', 'admin', 'admin@admin.com', '025123456789', 'admin', '$2a$12$wKi09SJYo1QfY/V5SAI8jOyZ5OPsS305gQ3z504/I.y4MpcmqOzzy', 'Pelni', 'Kapten', 'Pelni', 1568689561, 'user.png', 1),
+(23, 'Royyan', 'user', 'user@user.com', '123123123', 'user', '$2a$12$wKi09SJYo1QfY/V5SAI8jOyZ5OPsS305gQ3z504/I.y4MpcmqOzzy', 'Pelni', 'Kapten', 'Pelni', 1636535169, 'user.png', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -104,7 +105,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -116,41 +117,41 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
--- Indexes for table `muster`
+-- Indeks untuk tabel `muster`
 --
 ALTER TABLE `muster`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `muster`
+-- AUTO_INCREMENT untuk tabel `muster`
 --
 ALTER TABLE `muster`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
