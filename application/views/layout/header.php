@@ -36,9 +36,6 @@
 </head>
 
 <body>
-
-  <!-- ======= Hero Section ======= -->
-
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
@@ -50,14 +47,6 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?= base_url('home') ?>">home</a></li>
-          <li class="dropdown"><a href="#solution"><span>Solution</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#sopKebakaran">SOP Kebakaran</a></li>
-              <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#penKebakaran">Penanganan Kebakaran</a></li>
-              <li><a href="<?= base_url('muster') ?>">Muster List</a></li>
-              <li><a href="<?= base_url('about') ?>">About Us</a></li>
-            </ul>
-          </li>
           <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
