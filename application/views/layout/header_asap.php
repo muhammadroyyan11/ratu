@@ -53,24 +53,41 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="<?= base_url('user') ?>"><img src="<?php echo base_url('assets/img/asap.png') ?>" alt="" class="img-fluid"></a>
+        <a href="<?= base_url('home') ?>"><img src="<?php echo base_url('assets/img/asap.png') ?>" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="<?= base_url('home') ?>">home</a></li>
-          <li class="dropdown"><a href="#solution"><span>Solution</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#sopKebakaran">SOP Kebakaran</a></li>
-              <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#penKebakaran">Penanganan Kebakaran</a></li>
-              <li><a href="<?= base_url('muster') ?>">Muster List</a></li>
-              <li><a href="<?= base_url('about') ?>">About Us</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
+          <?php
+          if ($this->session->has_userdata('login_session')) : ?>
+            <li><a class="nav-link scrollto active" href="<?= site_url('user/setting') ?>">Hi <?= userdata('nama') ?>!</a></li>
+            <li class="dropdown"><a href="#solution"><span>Solution</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="<?= base_url('stowage') ?>">Stowage Plan</a></li>
+                <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#sopKebakaran">SOP Kebakaran</a></li>
+                <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#penKebakaran">Penanganan Kebakaran</a></li>
+                <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#inputData">Input Data</a></li>
+                <li><a href="<?= base_url('muster') ?>">Muster List</a></li>
+                <li><a href="<?= base_url('about') ?>">About Us</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="<?= base_url('auth/logout') ?>">Logout</a></li>
+          <?php else : ?>
+            <li><a class="nav-link scrollto active" href="<?= base_url('home') ?>">home</a></li>
+            <li class="dropdown"><a href="#solution"><span>Solution</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="<?= base_url('stowage') ?>">Stowage Plan</a></li>
+                <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#sopKebakaran">SOP Kebakaran</a></li>
+                <li><a href="<?= base_url('home') ?>" data-bs-toggle="modal" data-bs-target="#penKebakaran">Penanganan Kebakaran</a></li>
+                <li><a href="<?= base_url('muster') ?>">Muster List</a></li>
+                <li><a href="<?= base_url('about') ?>">About Us</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
+          <?php endif; ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+  </header>

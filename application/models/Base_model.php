@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Base_model extends CI_Model
 {
 
-    public function getUser($table, $data = null, $where = null)
+    public function getData($table, $data = null, $where = null)
     {
         if ($data != null) {
             return $this->db->get_where($table, $data)->row_array();

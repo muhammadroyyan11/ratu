@@ -39,7 +39,7 @@ function userdata($field)
     $ci->load->model('Base_m', 'base');
 
     $userId = $ci->session->userdata('login_session')['user'];
-    return $ci->base->getUser('user', ['id_user' => $userId])[$field];
+    return $ci->base->getData('user', ['id_user' => $userId])[$field];
 }
 
 function output_json($data)

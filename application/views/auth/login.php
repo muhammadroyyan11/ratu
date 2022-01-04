@@ -22,6 +22,7 @@
                                 </div>
                                 <div class=" form-group">
                                     <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Password">
+                                    <input style="margin: 10px;" type="checkbox" onclick="myFunction()"> Show Password
                                     <?= form_error('pass', '<small class="text-danger pl-3">', '</small>'); ?>
                                 </div>
                                 <button type="submit" class="btn btn-danger btn-user btn-block">
@@ -46,3 +47,4 @@
     </div>
 
 </div>
+<script src="<?= base_url('assets/js/app.js') ?>"></script>

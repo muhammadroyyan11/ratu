@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>ASAP</title>
+  <title><?= $title; ?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -41,16 +41,21 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="<?= base_url('user') ?>"><img src="<?php echo base_url('assets/img/asap.png') ?>" alt="" class="img-fluid"></a>
+        <a href="<?= base_url('home') ?>"><img src="<?php echo base_url('assets/img/asap.png') ?>" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="<?= base_url('home') ?>">home</a></li>
-          <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
+          <?php
+          if ($this->session->has_userdata('login_session')) : ?>
+            <li><a class="nav-link scrollto active" href="<?= site_url('user/setting') ?>">Hi <?= userdata('nama') ?>!</a></li>
+            <li><a class="nav-link scrollto" href="<?= base_url('auth/logout') ?>">Logout</a></li>
+          <?php else : ?>
+            <li><a class="nav-link scrollto active" href="<?= base_url('home') ?>">home</a></li>
+            <li><a class="nav-link scrollto" href="<?= base_url('auth') ?>">Login</a></li>
+          <?php endif; ?>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->

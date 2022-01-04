@@ -3,12 +3,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class SOP extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Base_model', 'base');
+	}
 
 	public function timbul_api()
 	{
-		$data['user'] = $this->db->get_where('user', ['email' =>
-		$this->session->userdata('email')])->row_array();
-
+		$data['title'] = 'Timbul Api';
 		$this->load->view('layout/header', $data);
 		$this->load->view('sop_kebakaran/timbul_api');
 		$this->load->view('layout/footer');
@@ -16,9 +19,7 @@ class SOP extends CI_Controller
 
 	public function air_masuk()
 	{
-		$data['user'] = $this->db->get_where('user', ['email' =>
-		$this->session->userdata('email')])->row_array();
-
+		$data['title'] = 'Air Masuk';
 		$this->load->view('layout/header', $data);
 		$this->load->view('sop_kebakaran/air_masuk');
 		$this->load->view('layout/footer');
@@ -26,9 +27,7 @@ class SOP extends CI_Controller
 
 	public function man_overboard()
 	{
-		$data['user'] = $this->db->get_where('user', ['email' =>
-		$this->session->userdata('email')])->row_array();
-
+		$data['title'] = 'Man Overboard';
 		$this->load->view('layout/header', $data);
 		$this->load->view('sop_kebakaran/man_overboard');
 		$this->load->view('layout/footer');

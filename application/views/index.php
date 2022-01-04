@@ -11,9 +11,16 @@
 
         <div class="row justify-content-center">
           <?php
-          if (!isset($_SESSION['email'])) {
+          if (!$this->session->has_userdata('login_session')) :
           ?>
             <!-- SOP KEBAKARAN -->
+            <div class="card col-lg-4 col-md-6" style="width: 18rem;">
+              <img src="<?php echo base_url('assets/img/stowage.jpeg') ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Smart Stowage Plan</h5>
+                <a href="stowage" class="btn btn-danger">See Details</a>
+              </div>
+            </div>
             <div class="card col-lg-4 col-md-6" style="width: 18rem;">
               <img src="<?php echo base_url('assets/img/solution/s1.png') ?>" class="card-img-top" alt="s1">
               <div class="card-body">
@@ -131,8 +138,15 @@
               </div>
             </div>
         </div>
-      <?php } else { ?>
+      <?php else : ?>
         <!-- SOP KEBAKARAN -->
+        <div class="card col-lg-4 col-md-6" style="width: 18rem;">
+          <img src="<?php echo base_url('assets/img/stowage.jpeg') ?>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Smart Stowage Plan</h5>
+            <a href="stowage" class="btn btn-danger">See Details</a>
+          </div>
+        </div>
         <div class="card col-lg-4 col-md-6" style="width: 18rem;">
           <img src="<?php echo base_url('assets/img/solution/s1.png') ?>" class="card-img-top" alt="s1">
           <div class="card-body">
@@ -289,7 +303,7 @@
         </div>
       </div>
     <?php
-          }
+          endif;
     ?>
     </div>
     </section>

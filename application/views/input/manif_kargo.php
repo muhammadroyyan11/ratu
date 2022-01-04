@@ -10,88 +10,80 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4"><b>Manifest Kargo</b></h1>
                             </div>
-                            <form class="user">
+                            <form class="input" method="POST" action="<?= base_url('input/manif_kargo') ?>">
                                 <div class="form-group">
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="namaKapal"
-                                            placeholder="Nama Kapal">
+                                        <input type="text" class="form-control form-control-user" name="namaKapal" placeholder="Nama Kapal">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="tandaPanggil"
-                                            placeholder="Tanda Panggil">
+                                        <input type="text" class="form-control form-control-user" name="pelabAsal" placeholder="Pelabuhan Asal">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="pemilikKapal"
-                                            placeholder="Pemilik Kapal">
+                                        <input type="text" class="form-control form-control-user" name="ETD" placeholder="Perkiraan Waktu Keberangkatan (ETD)">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="benderaNegara"
-                                            placeholder="Bendera Negara">
+                                        <input type="text" class="form-control form-control-user" name="pelabTujuan" placeholder="Pelabuhan Tujuan">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="pelabuhanTerdaftar"
-                                            placeholder="Pelabuhan Terdaftar">
+                                        <input type="text" class="form-control form-control-user" name="ETA" placeholder="Perkiraan Waktu Tiba (ETA)">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="tahunPembangunan"
-                                            placeholder="Tahun Pembangunan">
+                                        <input type="text" class="form-control form-control-user" name="namaPengirim" placeholder="Nama Pengirim">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="tipeKapal"
-                                            placeholder="Tipe Kapal">
+                                        <input type="text" class="form-control form-control-user" name="alamatPengirim" placeholder="Alamat Pengirim">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="rutePelayaran"
-                                            placeholder="Rute Pelayaran">
+                                        <input type="text" class="form-control form-control-user" name="kontakPengirim" placeholder="Kontak Pengirim">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="klasifikasi"
-                                            placeholder="Klasifikasi">
+                                        <input type="text" class="form-control form-control-user" name="namaShipper" placeholder="Nama Shipper">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="beratKotor"
-                                            placeholder="Berat Kotor">
+                                        <input type="text" class="form-control form-control-user" name="alamatShipper" placeholder="Alamat Shipper">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="beratBersih"
-                                            placeholder="Berat Bersih">
+                                        <input type="text" class="form-control form-control-user" name="kontakShipper" placeholder="Kontak Shipper">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="beratMati"
-                                            placeholder="Berat Mati">
+                                        <input type="text" class="form-control form-control-user" name="nomorKontainer" placeholder="Nomor Kontainer">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="panjangKapalKeseluruhan"
-                                            placeholder="Panjang Kapal Keseluruhan">
+                                        <input type="text" class="form-control form-control-user" name="tipeKontainer" placeholder="Tipe Kontainer">
+                                        <label for="tipeKontainer">dry, reefer, open sided, open top, tank, flat track</label>
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="panjangAntaraTegakLurus"
-                                            placeholder="Panjang Antara Tegak Lurus">
+                                        <input type="text" class="form-control form-control-user" name="beratTara" placeholder="Berat Tara">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="lebarKapalMolded"
-                                            placeholder="Lebar Kapal Molded">
+                                        <input type="text" class="form-control form-control-user" name="beratBersih" placeholder="Berat Bersih">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="tinggiMoldedHinggaDeck"
-                                            placeholder="Tinggi Molded Hingga Deck">
+                                        <input type="text" class="form-control form-control-user" name="komoditas" placeholder="Komoditas">
+                                        <label for="komoditas">(Dangerous Good/Non DG)</label>
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="bagianTercelup"
-                                            placeholder="Bagian Tercelup">
+                                        <input type="text" class="form-control form-control-user" name="deskripsiMuatan" placeholder="Deskripsi Muatan">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="tipeMesinKapal"
-                                            placeholder="Tipe Mesin Kapal">
+                                        <input type="text" class="form-control form-control-user" name="ukuranKontainer" placeholder="Ukuran Kontainer (ft)">
+                                        <label for="ukuranKontainer">20, 40</label>
+                                    </div><br>
+                                    <label>Stowage</label>
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control form-control-user" name="bay" placeholder="Bay">
                                     </div><br>
                                     <div class="col-lg-12">
-                                        <input type="text" class="form-control form-control-user" id="kapasitasKargo"
-                                            placeholder="Kapasitas Kargo (TEUS)">
+                                        <input type="text" class="form-control form-control-user" name="raw" placeholder="Raw">
+                                    </div><br>
+                                    <div class="col-lg-12">
+                                        <input type="text" class="form-control form-control-user" name="tier" placeholder="Tier">
                                     </div>
-                                </div><hr>
-                                <a href="#" class="btn btn-danger btn-user btn-block">
+                                </div>
+                                <hr>
+                                <button type="submit" class="btn btn-danger btn-user btn-block">
                                     Submit
-                                </a>
+                                </button>
                             </form>
                         </div>
                     </div>
