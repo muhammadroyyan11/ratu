@@ -47,13 +47,7 @@ class Auth extends CI_Controller
 							'timestamp' => time()
 						];
 						$this->session->set_userdata('login_session', $userdata);
-						if ($user_db['role'] === 'admin') {
-							redirect('admin');
-						} else if ($user_db['role'] === 'user') {
-							redirect('home');
-						} else {
-							redirect('auth');
-						}
+						redirect('home');
 					}
 				} else {
 					set_pesan('password salah', false);

@@ -9,11 +9,6 @@ class Auth_model extends CI_Model
         $query = $this->db->get_where('user', ['email' => $email]);
         return $query->num_rows();
     }
-    public function cek_role()
-    {
-        $query = $this->db->get_where('user', ['role' => 'admin']);
-        return $query->num_rows();
-    }
 
     public function get_password($email)
     {

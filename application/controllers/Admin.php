@@ -12,7 +12,7 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata('role') === 'admin') {
+        if (is_admin()) {
             $this->load->view('admin/index');
         } else {
             redirect('home');
