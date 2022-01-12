@@ -12,8 +12,10 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        $this->load->view('layout/header_asap');
-        $this->load->view('user/detail');
-        $this->load->view('layout/footer');
+        if ($this->session->userdata('role') === 'admin') {
+            $this->load->view('admin/index');
+        } else {
+            redirect('home');
+        }
     }
 }
