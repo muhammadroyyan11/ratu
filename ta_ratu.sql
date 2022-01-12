@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2021 pada 16.43
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.26
+-- Host: localhost
+-- Generation Time: Jan 04, 2022 at 04:24 AM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,82 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `muster`
+-- Table structure for table `data_umum`
+--
+
+CREATE TABLE `data_umum` (
+  `id_data_umum` int(11) NOT NULL,
+  `namaKapal` varchar(255) NOT NULL,
+  `tandaPanggil` varchar(255) NOT NULL,
+  `pemilikKapal` varchar(255) NOT NULL,
+  `benderaNegara` varchar(255) NOT NULL,
+  `pelabuhanTerdaftar` varchar(255) NOT NULL,
+  `tahunPembangunan` varchar(255) NOT NULL,
+  `tipeKapal` varchar(255) NOT NULL,
+  `rutePelayaran` varchar(255) NOT NULL,
+  `klasifikasi` varchar(255) NOT NULL,
+  `beratKotor` varchar(255) NOT NULL,
+  `beratBersih` varchar(255) NOT NULL,
+  `beratMati` varchar(255) NOT NULL,
+  `panjangKapalKeseluruhan` varchar(255) NOT NULL,
+  `panjangAntaraTegakLurus` varchar(255) NOT NULL,
+  `lebarKapalMolded` varchar(255) NOT NULL,
+  `tinggiMoldedHinggaDeck` varchar(255) NOT NULL,
+  `bagianTercelup` varchar(255) NOT NULL,
+  `tipeMesinKapal` varchar(255) NOT NULL,
+  `kapasitasKargo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `data_umum`
+--
+
+INSERT INTO `data_umum` (`id_data_umum`, `namaKapal`, `tandaPanggil`, `pemilikKapal`, `benderaNegara`, `pelabuhanTerdaftar`, `tahunPembangunan`, `tipeKapal`, `rutePelayaran`, `klasifikasi`, `beratKotor`, `beratBersih`, `beratMati`, `panjangKapalKeseluruhan`, `panjangAntaraTegakLurus`, `lebarKapalMolded`, `tinggiMoldedHinggaDeck`, `bagianTercelup`, `tipeMesinKapal`, `kapasitasKargo`) VALUES
+(1, 'cob', 'isi', 'dat', 'kjadakjn', 'jdn', 'jknd', 'dn', 'kdn', 'jndj', 'kndj', 'nd', 'ndk', 'nd', 'nkdn', 'jndj', 'kndjk', 'ndj', 'ndjkn', 'jdn'),
+(2, 'hbhjbh', 'bhjbhj', 'bhj', 'bhjb', 'hjb', 'hjb', 'hjbhj', 'bhj', 'bhj', 'bhj', 'bhj', 'bj', 'bj', 'bh', 'bjhb', 'jh', 'bjh', 'bjh', 'bhj');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `manif_kargo`
+--
+
+CREATE TABLE `manif_kargo` (
+  `id_manif_kargo` int(11) NOT NULL,
+  `namaKapal` varchar(255) NOT NULL,
+  `pelabAsal` varchar(255) NOT NULL,
+  `ETD` varchar(255) NOT NULL,
+  `pelabTujuan` varchar(255) NOT NULL,
+  `ETA` varchar(255) NOT NULL,
+  `namaPengirim` varchar(255) NOT NULL,
+  `alamatPengirim` varchar(255) NOT NULL,
+  `kontakPengirim` varchar(255) NOT NULL,
+  `namaShipper` varchar(255) NOT NULL,
+  `alamatShipper` varchar(255) NOT NULL,
+  `kontakShipper` varchar(255) NOT NULL,
+  `nomorKontainer` varchar(255) NOT NULL,
+  `tipeKontainer` varchar(255) NOT NULL,
+  `beratTara` varchar(255) NOT NULL,
+  `beratBersih` varchar(255) NOT NULL,
+  `komoditas` varchar(255) NOT NULL,
+  `deskripsiMuatan` varchar(255) NOT NULL,
+  `ukuranKontainer` varchar(255) NOT NULL,
+  `bay` varchar(255) NOT NULL,
+  `raw` varchar(255) NOT NULL,
+  `tier` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `manif_kargo`
+--
+
+INSERT INTO `manif_kargo` (`id_manif_kargo`, `namaKapal`, `pelabAsal`, `ETD`, `pelabTujuan`, `ETA`, `namaPengirim`, `alamatPengirim`, `kontakPengirim`, `namaShipper`, `alamatShipper`, `kontakShipper`, `nomorKontainer`, `tipeKontainer`, `beratTara`, `beratBersih`, `komoditas`, `deskripsiMuatan`, `ukuranKontainer`, `bay`, `raw`, `tier`) VALUES
+(1, 'jnnjkn', 'jkn', 'jkn', 'kn', 'jnjk', 'njk', 'n', 'njk', 'njkn', 'kn', 'n', 'jn', 'kn', 'kn', 'knkj', 'kmm', 'kmkm', 'lkmlkm', 'lkml', 'kmlkmk', 'km');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `muster`
 --
 
 CREATE TABLE `muster` (
@@ -41,7 +116,7 @@ CREATE TABLE `muster` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `muster`
+-- Dumping data for table `muster`
 --
 
 INSERT INTO `muster` (`id`, `rank`, `fire`, `personal`, `oil`, `man`, `emergency`, `flooding`, `electric`, `collusion`) VALUES
@@ -66,7 +141,7 @@ INSERT INTO `muster` (`id`, `rank`, `fire`, `personal`, `oil`, `man`, `emergency
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -86,17 +161,18 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama`, `username`, `email`, `no_telp`, `role`, `password`, `namaKapal`, `jabatan`, `shipping`, `created_at`, `foto`, `is_active`) VALUES
-(1, 'Adminisitrator', 'admin', 'admin@admin.com', '025123456789', 'admin', '$2a$12$wKi09SJYo1QfY/V5SAI8jOyZ5OPsS305gQ3z504/I.y4MpcmqOzzy', 'Pelni', 'Kapten', 'Pelni', 1568689561, 'user.png', 1),
-(23, 'Royyan', 'user', 'user@user.com', '123123123', 'user', '$2a$12$wKi09SJYo1QfY/V5SAI8jOyZ5OPsS305gQ3z504/I.y4MpcmqOzzy', 'Pelni', 'Kapten', 'Pelni', 1636535169, 'user.png', 1);
+(1, 'Adminisitrator', 'admin', 'admin@admin.com', '0213456789', 'admin', '$2y$10$Jhb9pv1KRnDlZ18ZNaL24.FPdGEzu7ER41w4Yh0d5s8DqZBt8BsEG', 'coba', 'Kapten', 'Pelni', 1568689561, 'user.png', 1),
+(23, 'Royyan', 'user', 'royyan@user.com', '0781289379813', 'user', '$2y$10$o2T4VCYeZCbnbIuX7jn0.u/DU6gxRjqXAMCKTPYAKf8n.SAvJuHWG', 'Pelni', 'Kapten', 'Pelni', 1636535169, 'user.png', 1),
+(24, 'ratu fernando', 'ratubfernando', 'ratu@gmail.com', '8123985985', 'user', '83271588bc99a7c955dccaa529959a7d', 'pelni', 'kapten', 'jne', 1641127952, 'user.png', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -105,7 +181,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
@@ -117,41 +193,65 @@ INSERT INTO `user_role` (`id`, `role`) VALUES
 --
 
 --
--- Indeks untuk tabel `muster`
+-- Indexes for table `data_umum`
+--
+ALTER TABLE `data_umum`
+  ADD PRIMARY KEY (`id_data_umum`);
+
+--
+-- Indexes for table `manif_kargo`
+--
+ALTER TABLE `manif_kargo`
+  ADD PRIMARY KEY (`id_manif_kargo`);
+
+--
+-- Indexes for table `muster`
 --
 ALTER TABLE `muster`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `muster`
+-- AUTO_INCREMENT for table `data_umum`
+--
+ALTER TABLE `data_umum`
+  MODIFY `id_data_umum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `manif_kargo`
+--
+ALTER TABLE `manif_kargo`
+  MODIFY `id_manif_kargo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `muster`
 --
 ALTER TABLE `muster`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

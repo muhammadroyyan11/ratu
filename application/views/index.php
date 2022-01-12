@@ -18,7 +18,7 @@
               <img src="<?php echo base_url('assets/img/stowage.jpeg') ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Smart Stowage Plan</h5>
-                <a href="stowage" class="btn btn-danger">See Details</a>
+                <a href="<?= base_url('stowage') ?>" class="btn btn-danger">See Details</a>
               </div>
             </div>
             <div class="card col-lg-4 col-md-6" style="width: 18rem;">
@@ -144,7 +144,7 @@
           <img src="<?php echo base_url('assets/img/stowage.jpeg') ?>" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Smart Stowage Plan</h5>
-            <a href="stowage" class="btn btn-danger">See Details</a>
+            <a href="<?= base_url('stowage') ?>" class="btn btn-danger">See Details</a>
           </div>
         </div>
         <div class="card col-lg-4 col-md-6" style="width: 18rem;">

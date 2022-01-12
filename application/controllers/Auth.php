@@ -31,32 +31,35 @@ class Auth extends CI_Controller
 			$this->load->view('auth/login');
 			$this->load->view('auth/footer');
 		} else {
-			$input = $this->input->post(null, true);
+			$cek_admin = $this->auth->cek_role();
+			if ($cek_admin == 'admin') {
+				$input = $this->input->post(null, true);
 
-			$cek_email = $this->auth->cek_email($input['email']);
-			if ($cek_email > 0) {
-				$password = $this->auth->get_password($input['email']);
-				if (password_verify($input['password'], $password)) {
-					$user_db = $this->auth->userdata($input['email']);
-					if ($user_db['is_active'] != 1) {
-						set_pesan('akun anda belum aktif/dinonaktifkan. Silahkan hubungi admin.', false);
-						redirect('auth');
+				$cek_email = $this->auth->cek_email($input['email']);
+				if ($cek_email > 0) {
+					$password = $this->auth->get_password($input['email']);
+					if (password_verify($input['password'], $password)) {
+						$user_db = $this->auth->userdata($input['email']);
+						if ($user_db['is_active'] != 1) {
+							set_pesan('akun anda belum aktif/dinonaktifkan. Silahkan hubungi admin.', false);
+							redirect('auth');
+						} else {
+							$userdata = [
+								'user'  => $user_db['id_user'],
+								'role'  => $user_db['role'],
+								'timestamp' => time()
+							];
+							$this->session->set_userdata('login_session', $userdata);
+							redirect('home');
+						}
 					} else {
-						$userdata = [
-							'user'  => $user_db['id_user'],
-							'role'  => $user_db['role'],
-							'timestamp' => time()
-						];
-						$this->session->set_userdata('login_session', $userdata);
-						redirect('home');
+						set_pesan('password salah', false);
+						redirect('auth');
 					}
 				} else {
-					set_pesan('password salah', false);
+					set_pesan('username belum terdaftar', false);
 					redirect('auth');
 				}
-			} else {
-				set_pesan('username belum terdaftar', false);
-				redirect('auth');
 			}
 		}
 	}
