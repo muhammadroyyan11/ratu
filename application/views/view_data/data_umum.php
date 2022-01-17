@@ -22,7 +22,6 @@
                 <th>BAGIAN TERCELUP</th>
                 <th>TIPE MESIN KAPAL</th>
                 <th>KAPASITAS KARGO</th>
-                <th class="bg-warning">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -51,11 +50,6 @@
                     <td><?= $du->bagianTercelup ?></td>
                     <td><?= $du->tipeMesinKapal ?></td>
                     <td><?= $du->kapasitasKargo ?></td>
-                    <td>
-                        <!-- Button untuk modal -->
-                        <a href="#" type="button" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
-                        <a href="#" type="button" class="btn btn-warning"><i class="bi bi-trash"></i></i></a>
-                    </td>
                 </tr>
             <?php
             }

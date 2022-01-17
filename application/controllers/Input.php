@@ -16,7 +16,7 @@ class Input extends CI_Controller
 
 	public function data_umum()
 	{
-		$this->form_validation->set_rules('namaKapal', 'Nama Kapal', 'required|trim');
+		$this->form_validation->set_rules('namaKapal', 'Nama Kapal', 'required|trim|is_unique[data_umum.namaKapal]');
 		$this->form_validation->set_rules('tandaPanggil', 'Tanda Panggil', 'required|trim');
 		$this->form_validation->set_rules('pemilikKapal', 'Pemilik Kapal', 'required|trim');
 		$this->form_validation->set_rules('benderaNegara', 'Bendera Negara', 'required|trim');
@@ -35,6 +35,7 @@ class Input extends CI_Controller
 		$this->form_validation->set_rules('bagianTercelup', 'Bagian Tercelup', 'required|trim');
 		$this->form_validation->set_rules('tipeMesinKapal', 'Tipe Mesin Kapal', 'required|trim');
 		$this->form_validation->set_rules('kapasitasKargo', 'Kapasitas Kargo', 'required|trim');
+		$id_user = userdata('id_user');
 
 		if ($this->form_validation->run() == false) {
 			$data['title'] = 'Input Data Umum';
@@ -62,6 +63,7 @@ class Input extends CI_Controller
 			$input['bagianTercelup']      = $this->input->post('bagianTercelup');
 			$input['tipeMesinKapal']      = $this->input->post('tipeMesinKapal');
 			$input['kapasitasKargo']      = $this->input->post('kapasitasKargo');
+			$input['id_user'] = $id_user;
 
 			$query = $this->base->insert('data_umum', $input);
 			if ($query) {
@@ -76,7 +78,7 @@ class Input extends CI_Controller
 
 	public function manif_kargo()
 	{
-		$this->form_validation->set_rules('namaKapal', 'Nama Kapal', 'required|trim');
+		$this->form_validation->set_rules('namaKapal', 'Nama Kapal', 'required|trim|is_unique[manif_kargo.namaKapal]');
 		$this->form_validation->set_rules('pelabAsal', 'Pelabuhan Asal', 'required|trim');
 		$this->form_validation->set_rules('ETD', 'Perkiraan Waktu Keberangkatan (ETD)', 'required|trim');
 		$this->form_validation->set_rules('pelabTujuan', 'Pelabuhan Tujuan', 'required|trim');
@@ -97,6 +99,7 @@ class Input extends CI_Controller
 		$this->form_validation->set_rules('bay', 'Bay', 'required|trim');
 		$this->form_validation->set_rules('raw', 'Raw', 'required|trim');
 		$this->form_validation->set_rules('tier', 'Tier', 'required|trim');
+		$id_user = userdata('id_user');
 
 		if ($this->form_validation->run() == false) {
 			$data['title'] = 'Manifest Kargo';
@@ -126,6 +129,7 @@ class Input extends CI_Controller
 			$input['bay']      = $this->input->post('bay');
 			$input['raw']      = $this->input->post('raw');
 			$input['tier']      = $this->input->post('tier');
+			$input['id_user'] = $id_user;
 
 			$query = $this->base->insert('manif_kargo', $input);
 			if ($query) {

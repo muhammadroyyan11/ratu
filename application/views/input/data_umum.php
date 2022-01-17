@@ -11,10 +11,11 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4"><b>Data Umum Kapal</b></h1>
                             </div>
-                            <form class="input" method="POST" action="<?= base_url('input/data_umum') ?>">
+                            <form class="input" method="POST" action="">
                                 <div class="form-group">
                                     <div class="col-lg-12">
                                         <input type="text" class="form-control form-control-user" id="namaKapal" name="namaKapal" placeholder="Nama Kapal">
+                                        <?= form_error('namaKapal', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div><br>
                                     <div class="col-lg-12">
                                         <input type="text" class="form-control form-control-user" id="tandaPanggil" name="tandaPanggil" placeholder="Tanda Panggil">

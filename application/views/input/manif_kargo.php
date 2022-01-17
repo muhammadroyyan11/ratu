@@ -10,10 +10,11 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4"><b>Manifest Kargo</b></h1>
                             </div>
-                            <form class="input" method="POST" action="<?= base_url('input/manif_kargo') ?>">
+                            <form class="input" method="POST" action="">
                                 <div class="form-group">
                                     <div class="col-lg-12">
                                         <input type="text" class="form-control form-control-user" name="namaKapal" placeholder="Nama Kapal">
+                                        <?= form_error('namaKapal', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div><br>
                                     <div class="col-lg-12">
                                         <input type="text" class="form-control form-control-user" name="pelabAsal" placeholder="Pelabuhan Asal">

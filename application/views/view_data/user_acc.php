@@ -4,6 +4,7 @@
             <tr>
                 <th>NO</th>
                 <th>NAMA</th>
+                <th><b>IS ACTIVE?</b></th>
                 <th>USERNAME</th>
                 <th>EMAIL</th>
                 <th>NO TELP</th>
@@ -23,6 +24,7 @@
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><b><?= $ua->nama ?></b></td>
+                    <td><?= $ua->is_active ?></td>
                     <td><?= $ua->username ?></td>
                     <td><?= $ua->email ?></td>
                     <td><?= $ua->no_telp ?></td>

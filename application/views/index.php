@@ -13,56 +13,11 @@
           </div>
 
           <div class="row justify-content-center">
-            <!-- SOP KEBAKARAN -->
             <div class="card col-lg-4 col-md-6" style="width: 18rem;">
               <img src="<?php echo base_url('assets/img/stowage.jpeg') ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Smart Stowage Plan</h5>
                 <a href="<?= base_url('stowage') ?>" class="btn btn-danger">See Details</a>
-              </div>
-            </div>
-            <div class="card col-lg-4 col-md-6" style="width: 18rem;">
-              <img src="<?php echo base_url('assets/img/solution/s1.png') ?>" class="card-img-top" alt="s1">
-              <div class="card-body">
-                <h5 class="card-title">SOP Kebakaran</h5>
-                <!-- Button trigger modal -->
-                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#sopKebakaran">
-                  See Details
-                </a>
-
-                <!-- Modal -->
-                <div class="modal fade" id="sopKebakaran" tabindex="-1" aria-labelledby="sopKebakaranLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header btn-danger">
-                        <h5 class="modal-title" id="sopKebakaranLabel">SOP Kebakaran</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <div class="row justify-content-center">
-                          <div class="card col-lg-4 col-md-6" style="width: 14rem;">
-                            <a style="text-align: center; color: black;" href="SOP/timbul_api">
-                              <b>Munculnya Api</b><br>
-                              <img src="<?php echo base_url('assets/img/SOP/sop1.png') ?>" style="width: 12rem; height: 8rem;">
-                            </a>
-                          </div>
-                          <div class="card col-lg-4 col-md-6" style="width: 14rem;">
-                            <a style="text-align: center; color: black;" href="SOP/air_masuk">
-                              <b>Air Memasuki Ruangan</b><br>
-                              <img src="<?php echo base_url('assets/img/SOP/sop2.png') ?>" style="width: 12rem; height: 8rem;">
-                            </a>
-                          </div>
-                          <div class="card col-lg-4 col-md-6" style="width: 14rem;">
-                            <a style="text-align: center; color: black;" href="SOP/man_overboard">
-                              <b>Man Overboard</b><br>
-                              <img src="<?php echo base_url('assets/img/SOP/sop3.png') ?>" style="width: 12rem; height: 8rem;">
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -168,7 +123,7 @@
               </svg>
               <div class="card-body">
                 <h5 class="card-title">Data Manifest Kargo User</h5>
-                <a href="<?= base_url('') ?>" class="btn btn-danger">See Details</a>
+                <a href="<?= base_url('data/manif_kargo') ?>" class="btn btn-danger">See Details</a>
               </div>
             </div>
           </div>
@@ -180,56 +135,11 @@
       </div>
 
       <div class="row justify-content-center">
-        <!-- SOP KEBAKARAN -->
         <div class="card col-lg-4 col-md-6" style="width: 18rem;">
           <img src="<?php echo base_url('assets/img/stowage.jpeg') ?>" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Smart Stowage Plan</h5>
             <a href="<?= base_url('stowage') ?>" class="btn btn-danger">See Details</a>
-          </div>
-        </div>
-        <div class="card col-lg-4 col-md-6" style="width: 18rem;">
-          <img src="<?php echo base_url('assets/img/solution/s1.png') ?>" class="card-img-top" alt="s1">
-          <div class="card-body">
-            <h5 class="card-title">SOP Kebakaran</h5>
-            <!-- Button trigger modal -->
-            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#sopKebakaran">
-              See Details
-            </a>
-
-            <!-- Modal -->
-            <div class="modal fade" id="sopKebakaran" tabindex="-1" aria-labelledby="sopKebakaranLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header btn-danger">
-                    <h5 class="modal-title" id="sopKebakaranLabel">SOP Kebakaran</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="row justify-content-center">
-                      <div class="card col-lg-4 col-md-6" style="width: 14rem;">
-                        <a style="text-align: center; color: black;" href="SOP/timbul_api">
-                          <b>Munculnya Api</b><br>
-                          <img src="<?php echo base_url('assets/img/SOP/sop1.png') ?>" style="width: 12rem; height: 8rem;">
-                        </a>
-                      </div>
-                      <div class="card col-lg-4 col-md-6" style="width: 14rem;">
-                        <a style="text-align: center; color: black;" href="SOP/air_masuk">
-                          <b>Air Memasuki Ruangan</b><br>
-                          <img src="<?php echo base_url('assets/img/SOP/sop2.png') ?>" style="width: 12rem; height: 8rem;">
-                        </a>
-                      </div>
-                      <div class="card col-lg-4 col-md-6" style="width: 14rem;">
-                        <a style="text-align: center; color: black;" href="SOP/man_overboard">
-                          <b>Man Overboard</b><br>
-                          <img src="<?php echo base_url('assets/img/SOP/sop3.png') ?>" style="width: 12rem; height: 8rem;">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
