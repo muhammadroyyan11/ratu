@@ -22,8 +22,6 @@ class Data extends CI_Controller
 
     public function toggle($getId)
     {
-        // $id = encode_php_tags($getId);
-        // var_dump($getId);
         $status = $this->base->getData('user', ['id_user' => $getId])['is_active'];
         $toggle = $status ? 0 : 1; //Jika user aktif maka nonaktifkan, begitu pula sebaliknya
         $pesan = $toggle ? 'user diaktifkan.' : 'user dinonaktifkan.';
