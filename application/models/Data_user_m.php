@@ -7,6 +7,21 @@ class Data_user_m extends CI_Model
         return $this->db->get('user');
     }
 
+    public function getById($id)
+    {
+        return $this->db->get_where('user', ['id_user' => $id])->row();
+    }
+
+    public function update($data, $id)
+    {
+        return $this->db->update('user', $data, array('id_user' => $id));
+    }
+
+    public function delete($id)
+    {
+        return $this->db->delete('user', array('id_user' => $id));
+    }
+
     function tampil_data_umum()
     {
         return $this->db->get('data_umum');
