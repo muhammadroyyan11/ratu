@@ -1,9 +1,25 @@
-<div class="container m-lg-auto">
-    <div class="table-responsive">
-        <table class="table table-bordered">
-            <thead class="thead-dark">
+
+
+<section id="basic-datatable">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Data User</h4>
+                    <div class="pull-right">
+                        <a href="<?= site_url('user/add') ?>" class="btn btn-primary btn-flat">
+                            <i class="fa fa-user-plus"></i> Tambah
+                        </a>
+                    </div>
+                </div>
+<div class="card-content">
+    <div class="card-body card-dashboard">
+        <div class="table-responsive">
+            <table class="table zero-configuration">
+                <thead>
                 <tr>
                     <th>NO</th>
+                    <th>Aktivasi</th>
                     <th>NAMA</th>
                     <th><b>IS ACTIVE?</b></th>
                     <th>USERNAME</th>
@@ -23,7 +39,10 @@
                 ?>
                     <tr>
                         <td><?= $no++; ?></td>
-                        <td><b><?= $ua->nama ?></b></td>
+                        <td>
+                            <a href="<?= site_url('data/toggle/') . $ua->id_user ?>" class="btn btn-circle btn-sm <?= $ua->is_active ? 'btn-secondary' : 'btn-success' ?>" title="<?= $ua->is_active ? 'Nonaktifkan User' : 'Aktifkan User' ?>"><i class="fa fa-fw fa-power-off"></i></a>
+                        </td>
+                        <td><b><?= $ua->nama ?></b></td> 
                         <td><?= $ua->is_active ?></td>
                         <td><?= $ua->username ?></td>
                         <td><?= $ua->email ?></td>
@@ -33,7 +52,6 @@
                         <td><?= $ua->jabatan ?></td>
                         <td><?= $ua->shipping ?></td>
                         <td>
-                            <a href="<?= base_url(); ?>data/edit/<?= $ua->id_user; ?>" class="btn btn-warning"><i class="bi bi-pencil"></i></a>
                             <a href="<?= base_url(); ?>data/delete/<?= $ua->id_user; ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
@@ -41,6 +59,8 @@
                 }
                 ?>
             </tbody>
-        </table>
+            </table>
+        </div>
     </div>
 </div>
+</section>

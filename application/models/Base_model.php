@@ -24,6 +24,18 @@ class Base_model extends CI_Model
         // return $this->db->get_where($table, $where)->result_array();
     }
 
+    public function getUsers($id)
+    {
+        /**
+         * ID disini adalah untuk data yang tidak ingin ditampilkan. 
+         * Maksud saya disini adalah 
+         * tidak ingin menampilkan data user yang digunakan, 
+         * pada managemen data user
+         */
+        $this->db->where('id_user !=', $id);
+        return $this->db->get('user');
+    }
+
 
     public function joinBarang($where = null)
     {
@@ -65,21 +77,6 @@ class Base_model extends CI_Model
         if ($id != null) {
             $this->db->where('id_transaksi', $id);
         }
-        $query = $this->db->get();
-        return $query;
-    }
-
-    public function getUsers()
-    {
-        /**
-         * ID disini adalah untuk data yang tidak ingin ditampilkan. 
-         * Maksud saya disini adalah 
-         * tidak ingin menampilkan data user yang digunakan, 
-         * pada managemen data user
-         */
-        $this->db->select('*');
-        $this->db->from('user');
-        // $this->db->where('id_user !=', $id);
         $query = $this->db->get();
         return $query;
     }

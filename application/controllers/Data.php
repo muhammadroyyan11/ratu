@@ -14,10 +14,24 @@ class Data extends CI_Controller
     public function user_account()
     {
         $data['title'] = 'Data Akun User';
-        $data['user_account'] = $this->data_user_m->tampil_data_user()->result();
+        $data['user_account'] = $this->base->getUsers(userdata('id_user'))->result();
         $this->load->view('layout/header', $data);
         $this->load->view('view_data/user_acc', $data);
         $this->load->view('layout/footer');
+    }
+
+    public function toggle($getId)
+    {
+        // $id = encode_php_tags($getId);
+        // var_dump($getId);
+        $status = $this->base->getData('user', ['id_user' => $getId])['is_active'];
+        $toggle = $status ? 0 : 1; //Jika user aktif maka nonaktifkan, begitu pula sebaliknya
+        $pesan = $toggle ? 'user diaktifkan.' : 'user dinonaktifkan.';
+
+        if ($this->base->update('user', 'id_user', $getId, ['is_active' => $toggle])) {
+            set_pesan($pesan);
+        }
+        redirect('data/user_account');
     }
 
     function edit($id_user)
