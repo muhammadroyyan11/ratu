@@ -135,9 +135,11 @@ include('header.php');
 					</tbody>
 				</table>
 			</div>
+			<div class="container">
+				<img src="img/hazard_level.jpeg" style="width: fit-content;">
+			</div>
 		</div>
 	</div>
-
 </section>
 
 <?php include('footer.php'); ?>

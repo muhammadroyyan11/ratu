@@ -171,12 +171,6 @@ include('header.php');
 										</td>
 										<td>Merkuri</td>
 									</tr>
-									<tr>
-										<td>
-											<div class="ui label" style="background-color: tomato;"> ‎ ‎ ‎ </div>
-										</td>
-										<td>Baja</td>
-									</tr>
 								</tbody>
 							</table>
 						</div>
